@@ -1,9 +1,12 @@
 # IMDb_finder #
 
 A Python script that reads movie names from a file and creates a file having IMDb ratings for each movie. I had a huge collection of movies taken from a friend and wanted to watch the best ones. This script scrapes IMDB ratings for each movie and lists them in a file.
-Sample images - 
-![Movie list](https://github.com/sankalp-sangle/imdb_finder/blob/sankalp-sangle-patch-1/Sample_Images/movielist.png)
-![Ratings file](https://github.com/sankalp-sangle/imdb_finder/blob/sankalp-sangle-patch-1/Sample_Images/Generated_ratings.png)
+Movie list
+![Movie list](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/movielist.png)
+
+Ratings file
+![Ratings file](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/Generated_ratings.png)
+
 
 ## Requirements and Installation ##
 
@@ -35,7 +38,7 @@ imdbfile = open('Insert path to text document in which you want to store the imd
 insert the path to the file you want to store the ratings in.
 
 Sample image - 
-![Sample Paths](https://github.com/sankalp-sangle/imdb_finder/blob/sankalp-sangle-patch-1/Sample_Images/Sample_paths.png)
+![Sample Paths](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/Sample_paths.png)
 
 Finally, navigate to repository and type the following to execute the script.
 
