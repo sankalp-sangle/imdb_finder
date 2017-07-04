@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
-movielist = open('/media/sankalp/MEDIA/Movies/Movies/movielist.txt'); # Opens file to read list of movies
+movielist = open('Insert path to text document containg list of movies, with each movie name on a new line'); # Opens file to read list of movies
 content = movielist.readlines(); # Read names of movies into a list, content
-imdbfile = open('/media/sankalp/MEDIA/Movies/Movies/imdb_ratings.txt','a'); # Open a file to store imdb ratings
+imdbfile = open('Insert path to text document in which you want to store the imdb ratings','a'); # Open a file to store imdb ratings
 for moviename in content:
     url = 'http://google.com/search?q=' + str(moviename);
     print("Downloading from" + str(url));
