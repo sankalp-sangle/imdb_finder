@@ -6,7 +6,7 @@ Here is a non-exhaustive list of movies that I had :
 
 Here is the ratings file that the script produces.
 Ratings file
-![Ratings file](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/Generated_ratings.png)
+![Ratings file](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/ratings.png)
 
 One need not worry about jumbled and messy file names like 'Cinema.Paradiso.1988.1080p.BluRay.x264.anoXmos.mp4', the script takes care of the same.
 
