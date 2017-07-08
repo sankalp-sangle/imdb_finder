@@ -1,5 +1,7 @@
 # IMDb_finder #
 
+![WhyuseIMDb](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/whyuseimdb.png)
+
 Ever obtained a huge collection of Movies and don't know where to start? You are at the right place!
 A Python script that reads movie names from a specified directory and creates a file having IMDb ratings for each movie.
 
@@ -10,7 +12,6 @@ Here is a non-exhaustive list of movies that I had :
 ![Movie list](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/movielist.png)
 
 Here is the ratings file that the script produces.
-Ratings file
 ![Ratings file](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/ratings.png)
 
 One need not worry about jumbled and messy file names like 'Cinema.Paradiso.1988.1080p.BluRay.x264.anoXmos.mp4', the script takes care of the same.
