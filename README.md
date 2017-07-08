@@ -2,12 +2,12 @@
 
 ![WhyuseIMDb](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/whyuseimdb.png)
 
-Ever obtained a huge collection of Movies and don't know where to start? You are at the right place!
+Ever obtained a huge collection of Movies and don't know where to start watching? You are at the right place!
 A Python script that reads movie names from a specified directory and creates a file having IMDb ratings for each movie.
 
 (Disclaimer : I do not agree that IMDb ratings are the best judge of a movie ;) )
 
-This script scrapes IMDB ratings for each movie and lists them in a file.
+This script scrapes IMDb ratings for each movie and lists them in a file.
 Here is a non-exhaustive list of movies that I had :
 ![Movie list](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/movielist.png)
 
