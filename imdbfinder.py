@@ -29,8 +29,8 @@ def scrape(movie,ratingfile):
             return
 
 def main():
-    directory = sys.argv[1];
-    imdbfile = open('imdb.txt','w'); # Open a file to store imdb ratings
+    directory = sys.argv[1]
+    imdbfile = open('imdb.txt','w') # Open a file to store imdb ratings
     content =[]
     
 
@@ -42,8 +42,8 @@ def main():
     for moviename in content:
         scrape(moviename,imdbfile)
         
-    imdbfile.close();
+    imdbfile.close()
 
 
 if __name__ == "__main__":
-    main();
+    main()
