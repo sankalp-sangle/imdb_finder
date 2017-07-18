@@ -28,9 +28,45 @@ def scrape(movie,ratingfile):
             ratingfile.write(movie + ' ' + rating + '\n' + '\n') # Write to rating file ->the name of the movie and rating.
             return
 
+#This function scrapes the IMDb from the movie list.
+def scrape_imdb(s):
+    values=s.split()
+
+    if values != []:
+        temp=values[-1]
+        rating=float(temp[:-3])
+        return rating
+
+
+#A sort function which sort the movie list in either ascending or descending order!
+def sort_imdb(rating_file_txt,order):
+    rating_file=open(rating_file_txt,'r')
+    data=" "
+    ele=[]
+    while data!="":
+        data=rating_file.readline()
+        if data!='\n' and data!="":
+            ele.append(data)
+    rating_file.close()
+
+    rating_file=open(rating_file_txt,'w')
+
+
+    if order == 'A' or order=='a':
+        ele.sort(key=lambda x : scrape_imdb(x))
+    else:
+        ele.sort(key=lambda x : scrape_imdb(x),reverse=True)
+
+    for line in ele:
+        rating_file.write(line+"\n")
+
+
+
+
 def main():
     directory = sys.argv[1]
-    imdbfile = open('imdb.txt','w') # Open a file to store imdb ratings
+    order=sys.argv[2] # Order for sorting the IMDb list.
+    imdbfile = open('imdb.txt','w') # Open a file to store imdb ratings.
     content =[]
     
 
@@ -39,10 +75,15 @@ def main():
             if files[-4:] in ['.mp4', '.mkv', '.avi']:
                 content.append(cleanname(files[:-4]))
 
+
     for moviename in content:
         scrape(moviename,imdbfile)
-        
+
     imdbfile.close()
+    #The user enters the order in which the IMDb list will be sorted.
+    sort_imdb('imdb.txt',order)    #'a'/'A' for Ascending Sort and 'd'/'D' for Descending Sort
+
+
 
 
 if __name__ == "__main__":
