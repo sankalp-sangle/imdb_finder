@@ -26,17 +26,15 @@ $pip install bs4
 ## Usage ##
 The path to the directory containing your movies is passed as a command line argument, as shown:
 ```bash
-$python3 imdbfinder.py enter_complete_path_to_directory_here
+$python3 imdbfinder.py enter_complete_path_to_directory_here order_of_the_list('a'/'A' for Ascending and 'd'/'D' for Descending)
 ```
 ### Example ###
 ```bash
-$python3 imdbfinder.py /home/sankalp/Movies
+$python3 imdbfinder.py /home/sankalp/Movies a
 ```
 
 **NOTE** 
 Ensure that you are using Python 3 and not Python 2. There may be Unicode-related errors in Python 2.
 
-## Future improvements ##
-
-A simple sort function can be added to arrange the movies in order of IMDb ratings.
+## Future improvements ##  
 Suggestions are welcome!
