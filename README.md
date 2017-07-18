@@ -3,7 +3,7 @@
 ![WhyuseIMDb](https://github.com/sankalp-sangle/imdb_finder/blob/master/Sample_Images/whyuseimdb.png)
 
 Ever obtained a huge collection of Movies and don't know where to start watching? You are at the right place!
-A Python script that reads movie names from a specified directory and creates a file having IMDb ratings for each movie.
+A Python script that reads movie names from a specified directory and creates a file having IMDb ratings for each movie. The script further sorts the list into ascending/descending order as well.
 
 (Disclaimer : I do not agree that IMDb ratings are the best judge of a movie ;) )
 
@@ -24,7 +24,7 @@ $pip install bs4
 ```
 
 ## Usage ##
-The path to the directory containing your movies is passed as a command line argument, as shown:
+The path to the directory containing your movies is passed as a command line argument, along with the option on sorting into ascending or descending order, as shown:
 ```bash
 $python3 imdbfinder.py enter_complete_path_to_directory_here order_of_the_list('a'/'A' for Ascending and 'd'/'D' for Descending)
 ```
