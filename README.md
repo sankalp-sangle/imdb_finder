@@ -36,5 +36,6 @@ $python3 imdbfinder.py /home/sankalp/Movies a
 **NOTE** 
 Ensure that you are using Python 3 and not Python 2. There may be Unicode-related errors in Python 2.
 
-## Future improvements ##  
-Suggestions are welcome!
+## Acknowledgements and Future improvements ##
+A big thanks to [Apurv Bajaj](https://github.com/apb7) for writing the sort function and to [Shyamal Vaderia](https://github.com/svaderia) for inputs and awesome suggestions!
+Suggestions for improvement are welcome!
