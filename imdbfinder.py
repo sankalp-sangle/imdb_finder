@@ -2,12 +2,17 @@ import requests, sys, os
 from bs4 import BeautifulSoup
 
 
+unsuccesfulnames = []
 # cleanname() replaces periods,underscores,hyphens in filename with spaces and returns a substring till the earliest occuring element in keylist.
 def cleanname(filename):
+    
     filename = filename.replace('.', ' ').replace('_',' ').replace('-',' ')
+    
     keylist = ['720','1080','19','20','bluray','dvdrip','brrip','extended','final cut','directors cut','director\'s cut','cdrip']
+    
     indices = map(filename.lower().find,keylist)
     indices = [x for x in indices if x!= -1]
+    
     if indices == []:
         return filename
     else:    
@@ -17,18 +22,30 @@ def cleanname(filename):
 def scrape(movie,ratingfile):
     url = 'http://google.com/search?q=' + movie
     print("Downloading from" + url)
+    
     res = requests.get(url) # get source code of html page
     res.raise_for_status() # Raise error if problem
+    
     soup = BeautifulSoup(res.text,'html.parser')
     movie_info1 = soup.select('.s div') # search for div tag inside class element s
+    
     for result in movie_info1: # search over list of results found by select method
+        
         if result.getText().find("Rating") != -1: # If content has a string called Rating in it,
             start = result.getText().index("Rating") # Get start index of rating
             rating = result.getText()[start:start+14] # rating is a substring containing rating of file
-            if '.' not in rating:
+            if '.' not in rating: # Taking care of integer ratings
                 rating=rating[:-2]
+            try: # Taking care of special cases
+                error=float(rating.split()[-1][:-3])
+            except:
+                unsuccesfulnames.append(movie) # If there was an error in type conversion, then add to list and move on to next name
+                return
             ratingfile.write(movie + ' ' + rating + '\n' + '\n') # Write to rating file ->the name of the movie and rating.
             return
+    
+    unsuccesfulnames.append(movie) # If flow of control reaches to this point, it means no rating has been found for the movie
+    return
 
 #This function scrapes the IMDb from the movie list.
 def scrape_imdb(s):
@@ -45,10 +62,12 @@ def sort_imdb(rating_file_txt,order):
     rating_file=open(rating_file_txt,'r')
     data=" "
     ele=[]
+    
     while data!="":
         data=rating_file.readline()
         if data!='\n' and data!="":
             ele.append(data)
+    
     rating_file.close()
 
     rating_file=open(rating_file_txt,'w')
@@ -61,7 +80,13 @@ def sort_imdb(rating_file_txt,order):
 
     for line in ele:
         rating_file.write(line+"\n")
+    
+    rating_file.write('The following items did not yield a rating : ')
+    
+    for name in unsuccesfulnames:
+        rating_file.write(name + '\n'+'\n')
 
+    rating_file.close()
 
 
 
