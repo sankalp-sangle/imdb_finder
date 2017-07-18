@@ -25,6 +25,8 @@ def scrape(movie,ratingfile):
         if result.getText().find("Rating") != -1: # If content has a string called Rating in it,
             start = result.getText().index("Rating") # Get start index of rating
             rating = result.getText()[start:start+14] # rating is a substring containing rating of file
+            if '.' not in rating:
+                rating=rating[:-2]
             ratingfile.write(movie + ' ' + rating + '\n' + '\n') # Write to rating file ->the name of the movie and rating.
             return
 
